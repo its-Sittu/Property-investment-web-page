@@ -23,11 +23,22 @@ body {
   color: var(--text-primary);
   font-family: var(--font-inter);
   line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
   background-image: url('/bg-property.png');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
+  background-position: center top;
+  will-change: transform; /* Helps mobile performance */
 }
 
 /* Base App Layout */
