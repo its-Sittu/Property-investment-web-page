@@ -1,64 +1,148 @@
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import "./globals.css";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="app-container">
+      <header className="navbar">
+        <div className="logo-container">
+          {/* A simple placeholder logo resembling "Stake" */}
+          <div className="logo-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 9 20 6.5 17.5 5"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+              <path
+                d="M11 12H17"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+          <span>Stake</span>
+        </div>
+        <nav className="nav-links">
+          <a href="#">Properties</a>
+          <a href="#">Digital Assets</a>
+          <a href="#">Stake & Earn</a>
+        </nav>
+        <div className="auth-buttons">
+          <a href="#" className="login-btn">
+            Login
+          </a>
+          <a href="#" className="signup-btn">
+            Sign Up
+          </a>
+        </div>
+      </header>
+
+      <main className="main-content">
+        <section className="hero-section">
+          <h1 className="hero-title">
+            Discover <span className="highlight">high-growth</span>
+            <br />
+            property investments
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="hero-subtitle">
+            Join the CEG Equity Token batch. Start building your portfolio with
+            fractional ownership of global assets.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <button className="cta-button">
+            Start Earning Now <ArrowRight size={20} />
+          </button>
+        </section>
+
+        <section className="showcase-container">
+          <div className="showcase-image">
+            <div className="puzzle-overlay"></div>
+            {/* Playful puzzle piece floating */}
+            <div className="puzzle-piece"></div>
+          </div>
+
+          <div className="showcase-content">
+            <h2>
+              Access<br />
+              premium<br />
+              property<br />
+              ownership<br />
+              for <span className="highlight">$150</span>
+            </h2>
+
+            <div className="returns-card">
+              <div className="returns-header">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="#f48024"
+                    strokeWidth="2"
+                    strokeDasharray="4 4"
+                  />
+                  <circle cx="12" cy="12" r="4" fill="#f48024" />
+                </svg>
+                All Time Returns
+              </div>
+              <div className="returns-value">
+                <h3>AED 165,000</h3>
+                <span className="positive">+111%</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="progression-section">
+          <div className="progression-header">
+            <h3>Price Progression (200 Tokens)</h3>
+            <div className="status-badges">
+              <span className="badge sold-out">Sold Out 1-3</span>
+              <span className="badge active-badge">Active 4</span>
+            </div>
+          </div>
+
+          <div className="batches-grid">
+            <div className="batch-card">
+              <span className="batch-lbl">Batch 1</span>
+              <span className="batch-val">$4,000</span>
+            </div>
+            <div className="batch-card">
+              <span className="batch-lbl">Batch 2</span>
+              <span className="batch-val">$4,250</span>
+            </div>
+            <div className="batch-card">
+              <span className="batch-lbl">Batch 3</span>
+              <span className="batch-val">$4,500</span>
+            </div>
+            <div className="batch-card active">
+              <span className="batch-lbl">Batch 4</span>
+              <span className="batch-val">$4,750</span>
+            </div>
+            <div className="batch-card">
+              <span className="batch-lbl">Batch 5</span>
+              <span className="batch-val">$5,000</span>
+            </div>
+            <div className="batch-card">
+              <span className="batch-lbl">Batch 6</span>
+              <span className="batch-val">$5,250</span>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
